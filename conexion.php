@@ -1,7 +1,12 @@
 <?php
-$conexion = new mysqli("localhost", "root", "", "notas_app");
+$servidor = "localhost";
+$usuario = "root";
+$contraseña = "";
+$base_datos = "notas_app";
 
-if ($conexion->connect_error) {
-    die("❌ Error de conexión a la base de datos: " . $conexion->connect_error);
+$conn = new mysqli($servidor, $usuario, $contraseña, $base_datos);
+
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
 }
 ?>
